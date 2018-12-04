@@ -39,7 +39,7 @@ EEG.etc.components(2, :) = 0.1 * randn(size(time));
 EEG.etc.components(3, :) = time;
 
 A = [[1, 1, 1]; [0.5, 2, 1.0]; [1.5, 1.0, 2.0]];  % Mixing matrix
-        
+
 if rank_deficient,
     A = [A; A(end,:)];
 end
