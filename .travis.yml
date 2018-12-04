@@ -6,7 +6,6 @@ before_install:
   - export PATH=/home/travis/miniconda/bin:$PATH
   - conda update --yes --quiet conda
   - sudo apt-get install octave
-  - git clone https://github.com/eeglabdevelopers/eeglab.git
 install:
     - conda create -n testenv --yes pip python=2.7
     - source activate testenv
@@ -22,7 +21,6 @@ script:
     - octave plot_ica.m
     - octave plot_ica_whiten.m
     - octave plot_ica_pca.m
-    - octave --eval "addpath '../../eeglab'; eeglab; plot_ica_eeglab"
     - cd ..//..
 after_success:
   - bash <(curl -s https://codecov.io/bash)

@@ -59,8 +59,6 @@ end
 %% Project activations back to sensor space
 EEG_ica = eeg_checkset(EEG_ica);
 
-%% Fix a problem with octave
-EEG_ica.icaact = (EEG_ica.icaweights*EEG_ica.icasphere)*EEG_ica.data(EEG_ica.icachansind,:);
 EEG_ica.data = EEG_ica.icawinv * EEG_ica.icaact;
 
 %% Plot results
