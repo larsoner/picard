@@ -22,7 +22,7 @@ script:
     - octave plot_ica.m
     - octave plot_ica_whiten.m
     - octave plot_ica_pca.m
-    - octave --eval "eeglab; plot_ica_eeglab"
+    - octave --eval "addpath 'eeglab'; eeglab; plot_ica_eeglab"
     - cd ..//..
 after_success:
   - bash <(curl -s https://codecov.io/bash)
